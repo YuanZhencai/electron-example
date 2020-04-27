@@ -2,6 +2,8 @@ osx_image: xcode8.3
 sudo: required
 dist: trusty
 language: c
+services:
+  - docker
 matrix:
   include:
   - os: osx
@@ -19,6 +21,7 @@ addons:
     - libgnome-keyring-dev
     - icnsutils
 before_install:
+- docker pull nginx:1.13.12-alpine
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install --no-install-recommends -y icnsutils graphicsmagick xz-utils; fi
 install:
 - nvm install 10
@@ -28,6 +31,10 @@ install:
 - yarn
 script:
 - yarn run release
+- yarn run build:web
+- docker build . -t registry.cn-hangzhou.aliyuncs.com/palan/electron-example
+- docker login --username=yuanzhencai@palan registry.cn-hangzhou.aliyuncs.com --password $ALI_REGISTRY_PASSWORD
+- docker push registry.cn-hangzhou.aliyuncs.com/palan/electron-example
 branches:
   only:
   - master
