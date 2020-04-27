@@ -11,6 +11,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+
+const smp = new SpeedMeasurePlugin();
+
 let webConfig = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
@@ -148,4 +152,4 @@ if (process.env.NODE_ENV === 'production') {
   )
 }
 
-module.exports = webConfig
+module.exports = smp.wrap(webConfig)

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33f13521-9f74-4f43-817d-3254557f00a3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.electron-vue/webpack.web.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/.electron-vue/webpack.web.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +48,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587701411406</updated>
-      <workItem from="1587701415830" duration="3317000" />
+      <workItem from="1587701415830" duration="8746000" />
     </task>
     <task id="LOCAL-00001" summary="fix: process is not defended">
       <created>1587704546058</created>
@@ -55,7 +57,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587704546058</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix: remove vuex-electron">
+      <created>1587705003375</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587705003375</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -63,12 +72,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix: process is not defended" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: process is not defended" />
+    <MESSAGE value="fix: remove vuex-electron" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: remove vuex-electron" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="343" y="45" key="CommitChangelistDialog2" timestamp="1587704545833">
+    <state x="2263" y="47" key="CommitChangelistDialog2" timestamp="1587952754933">
+      <screen x="1920" y="23" width="1920" height="1057" />
+    </state>
+    <state x="343" y="45" key="CommitChangelistDialog2/1920.23.1920.1057/0.23.1920.979@0.23.1920.979" timestamp="1587705003136" />
+    <state x="2263" y="47" key="CommitChangelistDialog2/1920.23.1920.1057/0.23.1920.979@1920.23.1920.1057" timestamp="1587952754933" />
+    <state x="159" y="110" key="DiffContextDialog" timestamp="1587704993242">
       <screen x="0" y="23" width="1920" height="979" />
     </state>
-    <state x="343" y="45" key="CommitChangelistDialog2/1920.23.1920.1057/0.23.1920.979@0.23.1920.979" timestamp="1587704545833" />
+    <state x="159" y="110" key="DiffContextDialog/1920.23.1920.1057/0.23.1920.979@0.23.1920.979" timestamp="1587704993242" />
   </component>
 </project>
