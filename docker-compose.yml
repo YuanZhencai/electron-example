@@ -1,0 +1,6 @@
+version: "2"
+services:
+  eregistry:
+    image: registry.cn-hangzhou.aliyuncs.com/palan/electron-example
+    ports:
+      - 80:80
