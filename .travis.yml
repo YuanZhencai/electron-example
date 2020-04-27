@@ -2,12 +2,10 @@ osx_image: xcode8.3
 sudo: required
 dist: trusty
 language: c
-services:
-  - docker
 matrix:
   include:
   - os: osx
-#  - os: linux
+  - os: linux
     env: CC=clang CXX=clang++ npm_config_clang=1
     compiler: clang
 cache:
@@ -21,8 +19,9 @@ addons:
     - libgnome-keyring-dev
     - icnsutils
 before_install:
-- docker pull nginx:1.13.12-alpine
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install --no-install-recommends -y icnsutils graphicsmagick xz-utils; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./install_docker.sh; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker pull nginx:1.13.12-alpine; fi
 install:
 - nvm install 10
 - curl -o- -L https://yarnpkg.com/install.sh | bash
@@ -30,11 +29,11 @@ install:
 - npm install -g xvfb-maybe
 - yarn
 script:
-- yarn run release
-- yarn run build:web
-- docker build . -t registry.cn-hangzhou.aliyuncs.com/palan/electron-example
-- docker login --username=yuanzhencai@palan registry.cn-hangzhou.aliyuncs.com --password $ALI_REGISTRY_PASSWORD
-- docker push registry.cn-hangzhou.aliyuncs.com/palan/electron-example
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then yarn run release; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then yarn run build:web; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker build . -t registry.cn-hangzhou.aliyuncs.com/palan/electron-example; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker login --username=yuanzhencai@palan registry.cn-hangzhou.aliyuncs.com --password $ALI_REGISTRY_PASSWORD; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker push registry.cn-hangzhou.aliyuncs.com/palan/electron-example; fi
 branches:
   only:
   - master
