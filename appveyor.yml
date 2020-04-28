@@ -26,4 +26,8 @@ install:
 build_script:
   - yarn release
 
+artifacts:
+  - path: 'build\*.*'
+    name: build
+
 test: off
