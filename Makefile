@@ -1,5 +1,5 @@
 image:
-    docker pull registry.cn-hangzhou.aliyuncs.com/palan/electron-example:web
+	docker pull registry.cn-hangzhou.aliyuncs.com/palan/electron-example:web
 	docker build . -t registry.cn-hangzhou.aliyuncs.com/palan/electron-example
 web:
 	npm run build:web
