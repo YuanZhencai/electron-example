@@ -1,4 +1,3 @@
-FROM nginx:1.13.12-alpine
+FROM registry.cn-hangzhou.aliyuncs.com/palan/electron-example:web
 
-COPY dist/web /usr/share/nginx/html
 COPY build /usr/share/nginx/html/download
